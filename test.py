@@ -5,18 +5,18 @@ player_one = []
 player_two = []
 
 print('игрок 1 возбмите карту')
-pause = 'продолжим играть? выберите "еще" или "хватит"'
 game_over = 'много вы проиграли'
 
+
 player_one.append(random.choice(points))
-print(*player_one)
+print(f'вы набрали {sum(player_one)} очков')
 while sum(player_one) != 21:
-    print(pause)
+    print('продолжим играть?')
     stage = input()
-    if stage == 'еще':
+    if stage == 'да':
         player_one.append(random.choice(points))
         print(sum(player_one))
-    if stage == 'хватит':
+    if stage == 'себе':
         print(f'вы набрали {sum(player_one)} очков')
         break
     elif sum(player_one) == 21:
