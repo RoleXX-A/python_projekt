@@ -12,10 +12,13 @@ player_one.append(random.choice(points))
 print(*player_one)
 while sum(player_one) <= 21:
     print(pause)
-    go = input()
-    if go == 'еще':
+    stage = input()
+    if stage == 'еще':
         player_one.append(random.choice(points))
         print(sum(player_one))
+    if stage == 'хватит':
+        print(f'вы набрали {sum(player_one)} очков')
+        break
     elif sum(player_one) == 21:
         print('вы набрали 21 очко')
-print(game_over)
+    print(game_over)
