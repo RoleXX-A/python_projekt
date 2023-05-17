@@ -10,7 +10,7 @@ game_over = 'много вы проиграли'
 
 player_one.append(random.choice(points))
 print(*player_one)
-while sum(player_one) <= 21:
+while sum(player_one) != 21:
     print(pause)
     stage = input()
     if stage == 'еще':
@@ -21,4 +21,6 @@ while sum(player_one) <= 21:
         break
     elif sum(player_one) == 21:
         print('вы набрали 21 очко')
-    print(game_over)
+    if sum(player_one) > 21:
+        print(game_over)
+        break
