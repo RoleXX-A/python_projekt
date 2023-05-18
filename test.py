@@ -23,7 +23,7 @@ while sum(player_one) <= 21:
         print('вы набрали 21 очко')
         break
     if sum(player_one) > 21:
-        print(f'вы набрали {sum(player_one)}')
+        print(f'вы проиграли {sum(player_one)}')
         break
 
 print('игрок 2 возьмите карту')
@@ -43,10 +43,11 @@ while sum(player_two) <= 21:
         print('вы набрали 21 очко')
         break
     if sum(player_two) > 21:
-        print(f'вы набрали {sum(player_two)}')
+        print(f'вы проиграли {sum(player_two)}')
         break
 
-if 21 >= sum(player_one) > sum(player_two):
-    print('выиграл игрок 1')
-else:
-    print('выиграл игрок 2')
+if sum(player_one) and sum(player_two) <= 21:
+    if 21 == sum(player_one) > sum(player_two):
+        print('выиграл игрок 1')
+    else:
+        print('выиграл игрок 2')
