@@ -17,7 +17,7 @@ while sum(player_one) <= 21:
         player_one.append(random.choice(points))
         print(sum(player_one))
     if stage == 2:
-        print(f'вы набрали {sum(player_one)} очков')
+        print(f'вы набрали {sum(player_one)} очков \n')
         break
     elif sum(player_one) == 21:
         print('вы набрали 21 очко')
