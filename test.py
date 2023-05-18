@@ -11,7 +11,7 @@ player_one.append(random.choice(points))
 print(f'вы набрали {sum(player_one)} очков')
 
 while sum(player_one) <= 21:
-    print('продолжим играть? выберите - 1: да, 2: нет')
+    print('продолжим играть? \n1: да \n2: нет')
     stage = int(input())
     if stage == 1:
         player_one.append(random.choice(points))
@@ -31,7 +31,7 @@ player_two.append(random.choice(points))
 print(f'вы набрали {sum(player_two)} очков')
 
 while sum(player_two) <= 21:
-    print('продолжим играть? 1: да, 2: нет')
+    print('продолжим играть? \n1: да \n2: нет')
     stage = int(input())
     if stage == 1:
         player_two.append(random.choice(points))
