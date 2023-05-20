@@ -30,7 +30,7 @@ print('игрок 2 возьмите карту')
 player_two.append(random.choice(points))
 print(f'вы набрали {sum(player_two)} очков')
 
-while sum(player_two) <= 21:
+while sum(player_two) <= 21 and sum(player_one) <= 21:
     print('продолжим играть? \n1: да \n2: нет')
     stage = int(input())
     if stage == 1:
