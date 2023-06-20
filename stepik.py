@@ -1,14 +1,12 @@
-city = list(map(str, input().lower().split()))
-end_city = ['ь', 'ъ', 'ы']
-out = 'ДА'
+str_1 = input()
 
-for i in range(len(city)-1):
-    if city[i][-1] in end_city:
-        if city[i+1][0] != city[i][-2]:
-            out = 'НЕТ'
-            break
-    else:
-        if city[i+1][0] != city[i][-1]:
-            out = 'НЕТ'
-print(out)
+if not 'ра' in str_1:
+    print(-1)
+else:
+    for i in range(0, len(str_1)):
+        if str_1[i] == 'р' and str_1[i+1] == 'а':
+            print(i, end=' ')
+
+
+
 
