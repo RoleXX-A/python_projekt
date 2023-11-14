@@ -1,15 +1,13 @@
 import telebot
-
 from random import choice
-
-
 secret_key = '6652756332:AAFuzhaFCwTis93M6uaOtZsfj6Q1kh369_k'
 
 bot = telebot.TeleBot(secret_key)
 
 
+
 @bot.message_handler(commands=['start'])
-def start(message, keyboard=None):
+def start(message, keyboard = None):
     six_buttonR = telebot.types.KeyboardButton('6🟥')
     six_buttonB = telebot.types.KeyboardButton('6⬛️')
     seven_buttonR = telebot.types.KeyboardButton('7🟥')
@@ -28,8 +26,8 @@ def start(message, keyboard=None):
     king_buttonB = telebot.types.KeyboardButton('К⬛️')
     ace_buttonR = telebot.types.KeyboardButton('Т🟥')
     ace_buttonB = telebot.types.KeyboardButton('Т⬛️')
-    #red_button = telebot.types.KeyboardButton('🟥')  # создаем кнопку для красной карты
-    #black_button = telebot.types.KeyboardButton('⬛️')  # создаем кнопку для черной карты
+    # red_button = telebot.types.KeyboardButton('🟥')  # создаем кнопку для красной карты
+    # black_button = telebot.types.KeyboardButton('⬛️')  # создаем кнопку для черной карты
 
     # Добавляем кнопки клавиатуры
     keyboard = telebot.types.ReplyKeyboardMarkup()
@@ -40,12 +38,19 @@ def start(message, keyboard=None):
     keyboard.row(ten_buttonR, ten_buttonB)
     keyboard.row(jack_buttonR, jack_buttonB)
     keyboard.row(quin_buttonR, quin_buttonB)
-    keyboard.row(king_buttonR,king_buttonB)
+    keyboard.row(king_buttonR, king_buttonB)
     keyboard.row(ace_buttonR, ace_buttonB)
-    #reply_markup = keyboard передает клавиатуру в сообщение пользователю
-    bot.send_message(message.chat.id,'Угадай цвет масти карты: 🟥 или ⬛️',
+    # reply_markup = keyboard передает клавиатуру в сообщение пользователю
+    bot.send_message(message.chat.id, 'Угадай карту',
                      reply_markup=keyboard)
+
     bot.register_next_step_handler(message, answer_card)
+def level(message,keyboard=None):
+    keyboard = telebot.types.ReplyKeyboardMarkup()
+    level_button_easy = telebot.types.KeyboardButton('Легкий-только цвет')
+    level_button_hard = telebot.types.KeyboardButton('Сложный - значение и цвет')
+    keyboard.row(level_button_easy, level_button_hard)
+    bot.send_message(message.chat.id, 'Выбери уровень сложности')
 
 
 # функция обработки ответа игрока
@@ -55,23 +60,56 @@ def answer_card(message):
     # проверка ответа игрока
     if message.text == '6🟥' and message.text == random_card:
         bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
-    elif message.text == '⬛️' and suit in ('Т', 'П'):
+    if message.text == '7🟥' and message.text == random_card:
         bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
-    else:
-        bot.send_message(message.chat.id, 'Ответ не верный! ' + random_card)
+    if message.text == '8🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '9🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '10🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'В🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'Д🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'К🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'Т🟥' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '6⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '7⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '8⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '9⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == '10⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'В⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'Д⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'К⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    if message.text == 'Т⬛️' and message.text == random_card:
+        bot.send_message(message.chat.id, 'Ответ верный! Выбранная карта ' + random_card)
+    elif message.text != random_card:
+        bot.send_message(message.chat.id, 'Ответ не верный ' + random_card)
 
-    start(message) # зацикливание процесса игры
+    start(message)  # зацикливание процесса игры
 
 
-# функция добавляет и выбирает карты из колоды карт ( ч,б - красные, т,п - черные)
+# функция добавляет и выбирает карты из колоды карт
 def genarate_random_card():
     card_number = ['6', '7', '8', '9', '10', 'В', 'Д', 'K', 'Т']
-    card_suit = ['🟥', 'Б', 'Т', 'П']
+    card_suit = ['🟥', '⬛️']
 
     random_card_suit = choice(card_suit)
     random_card_number = choice(card_number)
 
     return random_card_suit, random_card_number
+
 
 # бесконечный запуск бота
 bot.infinity_polling()
