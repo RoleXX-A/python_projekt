@@ -39,8 +39,8 @@ def on_click(message):
         bot.send_message(message.chat.id, 'delete')
         bot.delete_message(message.chat.id, message.message_id - 3) #данная функция удаляет сообщение 3 от момента выолнения команды
 
-    elif message.text == 'Получить файл':
-        photo_file = open('C:/Users/User/YandexDisk/Загрузки/Акт.jpg', 'rb')
+    elif message.text == 'Получить файл': # отправка фото из интернета
+        photo_file = ('https://img.freepik.com/free-photo/adorable-illustration-kittens-playing-forest-generative-ai_260559-483.jpg?t=st=1713446527~exp=1713450127~hmac=ed707ff772772900a755018f79a08e64d5da2c018b3262bbb6181bb02a702582&w=826')
         bot.send_photo(message.chat.id, photo_file)
 
 
@@ -54,12 +54,14 @@ def get_photo(message):
     mark.row(types.InlineKeyboardButton('Перейти на сайт школы', url='https://itmuose.by'))
     mark.row(types.InlineKeyboardButton('Удалить фото', callback_data='delete'),types.InlineKeyboardButton('Изменить', callback_data='edit'))
     bot.reply_to(message, 'Я получил фото', reply_markup=mark)
+
 @bot.callback_query_handler(func = lambda callback:True)
 def callback_message(callback):
     if callback.data == 'delete':
         bot.delete_message(callback.message.chat.id, callback.message.id - 1)
     elif callback.data == 'edit':
-        bot.edit_message_text('Edit text', callback.message.chat.id, callback.message.id)
+        photo_file = open('C:/Users/User/YandexDisk/Загрузки/Акт.jpg', 'rb')
+        bot.send_photo(callback.message.chat.id, photo_file)
 
 
 
