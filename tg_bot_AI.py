@@ -10,6 +10,7 @@ client = OpenAI(
     base_url="https://api.proxyapi.ru/openai/v1",
 )
 
+
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
 @bot.message_handler(commands=['start','help'])
