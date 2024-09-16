@@ -1,9 +1,9 @@
-#7197734689:AAGSqJf_fPo-NA0aOePScjoVxoNHwWY3FsM
+
 from openai import OpenAI
 import telebot
 from telebot import types
-OPENAI_API_KEY = "sk-MMrfLGaE1bjKSpdZzo8u6tu7P5s1gOB2"
-TELEGRAM_BOT_TOKEN = "7197734689:AAGSqJf_fPo-NA0aOePScjoVxoNHwWY3FsM"
+OPENAI_API_KEY = "ключ прокси апи"
+TELEGRAM_BOT_TOKEN = "ключ телеграмм бота"
 # Инициализация клиента API OpenAI с вашим API ключом
 client = OpenAI(
     api_key= OPENAI_API_KEY,
