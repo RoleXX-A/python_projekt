@@ -5,6 +5,7 @@ import datetime
 from telebot import types
 from tok import *
 
+
 OPENAI_API_KEY = open_ai_key
 TELEGRAM_BOT_TOKEN = key
 
