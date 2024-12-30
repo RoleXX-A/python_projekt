@@ -37,7 +37,6 @@ def func2(message):
 @bot.callback_query_handler(func = lambda call:True)
 def callback_message(call):
     if call.data != 'else':
-        val = call.data.upper().split('/')
         url = 'https://www.cbr-xml-daily.ru/daily_json.js'
         response = requests.get(url) #запрос курса валют
         data = response.json()
@@ -50,7 +49,6 @@ def callback_message(call):
         bot.register_next_step_handler(call.message, my_cur)
 
 def my_cur(message):
-    val = message.text.upper().split('/')
     url = 'https://www.cbr-xml-daily.ru/daily_json.js'
     response = requests.get(url)
     data = response.json()

@@ -12,6 +12,7 @@ def deposit():
         print('Некоректная сумма')
         return 0
     else:
+        print('Операция выполнена успешно.')
         return amount
 
 def withdraw(balance):
@@ -30,6 +31,7 @@ def withdraw(balance):
         print('**********************************')
         return 0
     else:
+        print('Операция выполнена успешно.')
         return amount
 
 def main():

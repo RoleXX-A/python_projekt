@@ -45,7 +45,7 @@ def user_pass(message):
     bot.send_message(message.chat.id, 'Пользователь зарегистрирован', reply_markup=markup)
 
 @bot.callback_query_handler(func=lambda call:True)
-def callback(call, var1=None):
+def callback(call):
     conn = sqlite3.connect('test.db')
     cur = conn.cursor()
     cur.execute('SELECT * FROM user ORDER BY id DESC LIMIT 1') # выбирает из таблицы все столбцы

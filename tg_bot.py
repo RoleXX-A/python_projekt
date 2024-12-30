@@ -16,15 +16,8 @@ def start(message):
     btn3 = types.KeyboardButton('Получить файл')
     mark.row(btn2,btn3) # расположение кнопок
 
-
-
-    #audio_file = open('./123.mp3','rb') # Отправка файла в ответ на команду
+    #audio_file = open('./123.mp3','rb') # Отправка файла хранящегося локально в ответ на команду
     #bot.send_audio(message.chat.id, audio_file, reply_markup=mark)
-
-
-
-
-
 
     bot.send_message(message.chat.id, 'Привет', reply_markup=mark)
     bot.register_next_step_handler(message, on_click) # выполнение функции после нажатия на кнопку "on_click - это выполняемая функция"
