@@ -10,4 +10,7 @@ def convert_val():
     print(result_convert)
 
 
-convert_val()
+response = requests.get(url)
+data = response.json()
+print(data)
+print(data['Valute']['AUD']['Value'])
